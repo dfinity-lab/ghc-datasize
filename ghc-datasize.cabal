@@ -1,5 +1,5 @@
 name:               ghc-datasize
-version:            0.2.0
+version:            0.3.0
 license:            BSD3
 license-file:       LICENSE
 category:           GHC, Debug, Development
@@ -12,20 +12,17 @@ copyright:          Dennis Felsing 2012
 synopsis:           Determine the size of data structures in GHC's memory
 description:        ghc-datasize is a tool to determine the size of data
                     structures in GHC's memory. Determining the size of
-                    recursive data structures is supported. All sizes are in
-                    Bytes.
+                    recursive data structures is supported.
+                    All sizes are in bytes.
+tested-with:        GHC == 8.6.4
 
-tested-with: GHC == 7.6.3, GHC == 7.8.4, GHC == 7.10.3, GHC == 8.0.1
-
-Library
-  Exposed-modules: GHC.DataSize
-  Default-Language: Haskell2010
-  Build-depends: base == 4.*,
-                 deepseq >= 1.3 && < 1.5,
-                 ghc-heap-view >= 0.5
-  Hs-source-dirs: src/
-  Ghc-options: -Wall
+library
+  exposed-modules:  GHC.DataSize
+  default-language: Haskell2010
+  build-depends:    base == 4.*, deepseq, ghc-prim, ghc-heap == 8.6.4
+  hs-source-dirs:   src/
+  ghc-options:      -Wall
 
 source-repository head
-    type:     git
-    location: https://github.com/def-/ghc-datasize.git
+  type:     git
+  location: https://github.com/def-/ghc-datasize.git
